@@ -2,7 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import {getStreamingCompletion} from "./getStreamingCompletion.js";
-import OpenAI from "openai";
+import './db.js'
+import peopleRouter from './routes/people.js';
+
 
 const app = express();
 const port = 2000;
@@ -11,13 +13,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 
-
-
-
-app.get("/", (req, res) => {
-    return res.json({data: "success"});
-});
-
+app.use('/api/people', peopleRouter);
 
 app.post("/aiCompletion", async (req, res) => {
     const data = req.body;
@@ -27,6 +23,8 @@ app.post("/aiCompletion", async (req, res) => {
     }
     res.end();
 });
+
+app()
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
