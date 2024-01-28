@@ -1,5 +1,4 @@
-import OpenAI from "openai";
-
+const OpenAI = require('openai')
 const client = new OpenAI({
     apiKey: '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',
 });
@@ -18,10 +17,12 @@ const systemMessage = {
     `,
 };
 
-export const getStreamingCompletion = async ({userPrompt}) => {
+const getStreamingCompletion = async ({userPrompt}) => {
     return client.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [systemMessage, {role: "user", content: userPrompt}],
         stream: true,
     });
 };
+
+module.exports = getStreamingCompletion

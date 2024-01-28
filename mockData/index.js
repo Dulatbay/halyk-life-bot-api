@@ -1,14 +1,13 @@
-
 // Мок-данные для схемы Region
-export const regionsMockData = [
-    { name: 'Алматы', coefficient: 1.2 },
-    { name: 'Нур-Султан', coefficient: 1.5 },
-    { name: 'Шымкент', coefficient: 1.1 },
-    { name: 'Актау', coefficient: 1.3 },
+const regionsMockData = [
+    {name: 'Алматы', coefficient: 1.2},
+    {name: 'Нур-Султан', coefficient: 1.5},
+    {name: 'Шымкент', coefficient: 1.1},
+    {name: 'Актау', coefficient: 1.3},
     // Добавьте другие регионы Казахстана по мере необходимости
 ];
 
-export const peopleMockData = [
+const peopleMockData = [
     {
         firstName: 'Айдос',
         lastName: 'Жумабаев',
@@ -38,13 +37,14 @@ export const peopleMockData = [
 ];
 
 // Мок-данные для схемы InsuranceTerm
-export const insuranceTermsMockData = [
-    { value: 1, coefficient: 0.3 }, // 1 месяц
-    { value: 3, coefficient: 0.4 }, // 3 месяца
-    { value: 6, coefficient: 0.5 }, // 6 месяцев
-    { value: 12, coefficient: 0.6 }, // 1 год
-    { value: 24, coefficient: 0.7 }, // 2 года
+const insuranceTermsMockData = [
+    {value: 1, coefficient: 0.3}, // 1 месяц
+    {value: 3, coefficient: 0.4}, // 3 месяца
+    {value: 6, coefficient: 0.5}, // 6 месяцев
+    {value: 12, coefficient: 0.6}, // 1 год
+    {value: 24, coefficient: 0.7}, // 2 года
     // Добавьте другие сроки страхования по мере необходимости
 ];
 
+module.exports = {insuranceTermsMockData, peopleMockData, regionsMockData}
 

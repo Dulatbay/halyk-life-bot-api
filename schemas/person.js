@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-
+const mongoose = require('mongoose')
 const personSchema = new mongoose.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
@@ -14,4 +13,5 @@ const personSchema = new mongoose.Schema({
     isRegisteredInPsychiatricDispensary: { type: Boolean, default: false },
 });
 
-export const Person = mongoose.model('Person', personSchema);
+ const Person = mongoose.model('Person', personSchema);
+module.exports = Person

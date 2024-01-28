@@ -1,9 +1,6 @@
-import express from 'express';
-
+const express = require('express')
 const router = express.Router();
-import {Person} from '../schemas/person.js'; // Подключаем модель Person
-
-// Обработчик GET запроса для получения всех записей о людях
+const Person = require('../schemas/person'); // Подключаем модель Person
 router.get('/', async (req, res) => {
     try {
         const people = await Person.find(); // Используем метод find() для получения всех записей
@@ -14,4 +11,5 @@ router.get('/', async (req, res) => {
     }
 });
 
-export default router;
+
+module.exports = {router}

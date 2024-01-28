@@ -1,19 +1,19 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import {getStreamingCompletion} from "./getStreamingCompletion.js";
-import './db.js'
-import peopleRouter from './routes/people.js';
-
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require( "cors");
+const getStreamingCompletion = require("./getStreamingCompletion")
+require('./db')
+const {router} = require('./routes/people');
 
 const app = express();
 const port = 2000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
+app.use(express.static('public'))
 
 
-app.use('/api/people', peopleRouter);
+app.use('/api/people', router);
 
 app.post("/aiCompletion", async (req, res) => {
     const data = req.body;
@@ -24,7 +24,6 @@ app.post("/aiCompletion", async (req, res) => {
     res.end();
 });
 
-app()
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
