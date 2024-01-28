@@ -1,0 +1,12 @@
+{
+  "claim_for_insurance_payout": true,
+  "notarized_copy_of_death_certificate": true,
+  "copy_of_medical_certificate_of_death": true,
+  "extract_from_outpatient_medical_record": true,
+  "extract_from_inpatient_medical_record": true,
+  "conclusion_of_pathological_anatomical_examination": true,
+  "copy_of_identity_document_of_beneficiary": true,
+  "beneficiary_bank_account": 1234123412341234,
+  "copies_of_law_enforcement_materials": true,
+  "certificate_of_right_to_inheritance": true
+}
