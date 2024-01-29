@@ -6,7 +6,7 @@ require('./db')
 const {router} = require('./routes/people');
 
 const app = express();
-const port = 2000;
+const port = 2002;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
