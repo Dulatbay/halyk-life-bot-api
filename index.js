@@ -13,6 +13,7 @@ app.use(cors());
 app.use(express.static('public'))
 
 
+
 app.use('/api/people', router);
 
 app.post("/aiCompletion", async (req, res) => {
